@@ -1,0 +1,118 @@
+# -*- coding: utf-8 -*-
+
+################################################################################
+## Form generated from reading UI file 'new_so.ui'
+##
+## Created by: Qt User Interface Compiler version 6.11.1
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
+
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QComboBox, QDateEdit, QDialog,
+    QHeaderView, QLabel, QPushButton, QSizePolicy,
+    QTableWidget, QTableWidgetItem, QWidget)
+
+class Ui_NewSO(object):
+    def setupUi(self, Dialog):
+        if not Dialog.objectName():
+            Dialog.setObjectName(u"Dialog")
+        Dialog.resize(743, 977)
+        self.pushButton_11 = QPushButton(Dialog)
+        self.pushButton_11.setObjectName(u"pushButton_11")
+        self.pushButton_11.setGeometry(QRect(550, 880, 191, 71))
+        font = QFont()
+        font.setPointSize(16)
+        self.pushButton_11.setFont(font)
+        self.label_title = QLabel(Dialog)
+        self.label_title.setObjectName(u"label_title")
+        self.label_title.setGeometry(QRect(260, 0, 281, 61))
+        font1 = QFont()
+        font1.setPointSize(28)
+        self.label_title.setFont(font1)
+        self.label = QLabel(Dialog)
+        self.label.setObjectName(u"label")
+        self.label.setGeometry(QRect(0, 100, 151, 31))
+        font2 = QFont()
+        font2.setPointSize(14)
+        self.label.setFont(font2)
+        self.selectCust_combobox = QComboBox(Dialog)
+        self.selectCust_combobox.setObjectName(u"selectCust_combobox")
+        self.selectCust_combobox.setGeometry(QRect(160, 110, 481, 21))
+        self.tableWidget = QTableWidget(Dialog)
+        if (self.tableWidget.columnCount() < 5):
+            self.tableWidget.setColumnCount(5)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        __qtablewidgetitem4 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        self.tableWidget.setObjectName(u"tableWidget")
+        self.tableWidget.setGeometry(QRect(0, 210, 731, 461))
+        self.saveqty_button_12 = QPushButton(Dialog)
+        self.saveqty_button_12.setObjectName(u"saveqty_button_12")
+        self.saveqty_button_12.setGeometry(QRect(0, 840, 351, 91))
+        self.saveqty_button_12.setFont(font)
+        self.label_2 = QLabel(Dialog)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setGeometry(QRect(0, 150, 111, 31))
+        self.label_2.setFont(font2)
+        self.SelectDate = QDateEdit(Dialog)
+        self.SelectDate.setObjectName(u"SelectDate")
+        self.SelectDate.setGeometry(QRect(160, 150, 481, 31))
+        self.SelectDate.setCalendarPopup(True)
+        self.DeleteProduct_Button = QPushButton(Dialog)
+        self.DeleteProduct_Button.setObjectName(u"DeleteProduct_Button")
+        self.DeleteProduct_Button.setGeometry(QRect(480, 690, 121, 61))
+        self.AddProduct_Button_ = QPushButton(Dialog)
+        self.AddProduct_Button_.setObjectName(u"AddProduct_Button_")
+        self.AddProduct_Button_.setGeometry(QRect(620, 690, 121, 61))
+        self.label_3 = QLabel(Dialog)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setGeometry(QRect(0, 770, 121, 31))
+        self.label_3.setFont(font2)
+        self.label_amount = QLabel(Dialog)
+        self.label_amount.setObjectName(u"label_amount")
+        self.label_amount.setGeometry(QRect(130, 770, 511, 31))
+        self.label_amount.setFont(font2)
+
+        self.retranslateUi(Dialog)
+
+        QMetaObject.connectSlotsByName(Dialog)
+    # setupUi
+
+    def retranslateUi(self, Dialog):
+        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
+        self.pushButton_11.setText(QCoreApplication.translate("Dialog", u"Back ", None))
+        self.label_title.setText(QCoreApplication.translate("Dialog", u"Sales Order", None))
+        self.label.setText(QCoreApplication.translate("Dialog", u"Select Customer :", None))
+        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("Dialog", u"Product", None))
+        ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("Dialog", u"Quantity", None))
+        ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("Dialog", u"Unit Price", None))
+        ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(3)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("Dialog", u"Discount", None))
+        ___qtablewidgetitem4 = self.tableWidget.horizontalHeaderItem(4)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("Dialog", u"SubTotal", None))
+        self.saveqty_button_12.setText(QCoreApplication.translate("Dialog", u"Save Order", None))
+        self.label_2.setText(QCoreApplication.translate("Dialog", u"Select Date :", None))
+        self.SelectDate.setDisplayFormat(QCoreApplication.translate("Dialog", u"dd/mm/yyyy", None))
+        self.DeleteProduct_Button.setText(QCoreApplication.translate("Dialog", u"Delete Product", None))
+        self.AddProduct_Button_.setText(QCoreApplication.translate("Dialog", u"Add Product", None))
+        self.label_3.setText(QCoreApplication.translate("Dialog", u"Total Amount", None))
+        self.label_amount.setText("")
+    # retranslateUi
+
