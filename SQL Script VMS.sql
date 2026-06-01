@@ -4,22 +4,12 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
--- -----------------------------------------------------
--- Schema scm
--- -----------------------------------------------------
 
--- -----------------------------------------------------
--- Schema scm
--- -----------------------------------------------------
+
 CREATE SCHEMA IF NOT EXISTS `scm` DEFAULT CHARACTER SET utf8mb3 ;
 USE `scm` ;
 
--- -----------------------------------------------------
--- Table `scm`.`categories`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `scm`.`categories` (
   `CategoryID` INT NOT NULL AUTO_INCREMENT,
   `CategoryName` VARCHAR(45) NULL DEFAULT NULL,
@@ -29,9 +19,7 @@ AUTO_INCREMENT = 7
 DEFAULT CHARACTER SET = utf8mb3;
 
 
--- -----------------------------------------------------
--- Table `scm`.`customers`
--- -----------------------------------------------------
+--
 CREATE TABLE IF NOT EXISTS `scm`.`customers` (
   `CustomerID` INT NOT NULL AUTO_INCREMENT,
   `CustomerName` VARCHAR(45) NULL DEFAULT NULL,
@@ -45,8 +33,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
--- Table `scm`.`salesorders`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `scm`.`salesorders` (
   `SalesID` INT NOT NULL AUTO_INCREMENT,
   `SalesDate` DATETIME NULL DEFAULT NULL,
@@ -63,9 +50,7 @@ AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8mb3;
 
 
--- -----------------------------------------------------
--- Table `scm`.`payments`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `scm`.`payments` (
   `PaymentID` INT NOT NULL AUTO_INCREMENT,
   `SalesID` INT NULL DEFAULT NULL,
@@ -83,9 +68,7 @@ AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8mb3;
 
 
--- -----------------------------------------------------
--- Table `scm`.`products`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `scm`.`products` (
   `ProductID` INT NOT NULL AUTO_INCREMENT,
   `ProductName` VARCHAR(45) NULL DEFAULT NULL,
@@ -110,9 +93,7 @@ AUTO_INCREMENT = 17
 DEFAULT CHARACTER SET = utf8mb3;
 
 
--- -----------------------------------------------------
--- Table `scm`.`suppliers`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `scm`.`suppliers` (
   `SupplierID` INT NOT NULL AUTO_INCREMENT,
   `SupplierName` VARCHAR(45) NULL DEFAULT NULL,
@@ -125,9 +106,7 @@ AUTO_INCREMENT = 16
 DEFAULT CHARACTER SET = utf8mb3;
 
 
--- -----------------------------------------------------
--- Table `scm`.`purchaseorders`
--- -----------------------------------------------------
+-
 CREATE TABLE IF NOT EXISTS `scm`.`purchaseorders` (
   `PurchaseID` INT NOT NULL AUTO_INCREMENT,
   `PurchaseDate` DATETIME NULL DEFAULT NULL,
@@ -144,9 +123,7 @@ AUTO_INCREMENT = 15
 DEFAULT CHARACTER SET = utf8mb3;
 
 
--- -----------------------------------------------------
--- Table `scm`.`purchasedetail`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `scm`.`purchasedetail` (
   `PurchaseID` INT NOT NULL,
   `ProductID` INT NOT NULL,
@@ -165,9 +142,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
 
--- -----------------------------------------------------
--- Table `scm`.`roles`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `scm`.`roles` (
   `RoleID` INT NOT NULL AUTO_INCREMENT,
   `RoleName` VARCHAR(45) NOT NULL,
@@ -177,9 +152,7 @@ AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8mb3;
 
 
--- -----------------------------------------------------
--- Table `scm`.`salesdetail`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `scm`.`salesdetail` (
   `SalesID` INT NOT NULL,
   `ProductID` INT NOT NULL,
@@ -199,9 +172,6 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
 
--- -----------------------------------------------------
--- Table `scm`.`supplierpayments`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `scm`.`supplierpayments` (
   `SupplierPaymentsID` INT NOT NULL AUTO_INCREMENT,
   `PurchaseID` INT NULL DEFAULT NULL,
@@ -220,9 +190,6 @@ AUTO_INCREMENT = 16
 DEFAULT CHARACTER SET = utf8mb3;
 
 
--- -----------------------------------------------------
--- Table `scm`.`users`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `scm`.`users` (
   `UserID` INT NOT NULL AUTO_INCREMENT,
   `Username` VARCHAR(45) NOT NULL,
