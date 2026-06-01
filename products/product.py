@@ -1,9 +1,10 @@
 from PySide6.QtWidgets import QDialog, QMessageBox
 from PySide6.QtGui import QStandardItemModel, QStandardItem
 from PySide6.QtCore import Qt
-from products.product_ui import Ui_Product
 from db_connector import get_connection
 
+#Import Product UI
+from products.product_ui import Ui_Product
 #add product
 from products.add_product_ui import Ui_AddProduct
 #edit Product

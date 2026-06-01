@@ -5,7 +5,7 @@ from PySide6.QtCore import QDate, Qt
 from db_connector import get_connection
 
 
-
+#SO Invoice
 from SalesOrders.salesorder_ui import Ui_SalesOrder
 
 #Add New Sales Order

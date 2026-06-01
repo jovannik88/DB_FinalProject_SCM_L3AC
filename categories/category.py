@@ -46,15 +46,12 @@ class AddCategoryWindow(QDialog):
         super().__init__()
         self.ui = Ui_Catt()
         self.ui.setupUi(self)
-
-        # Connect buttons
         self.ui.save_button.clicked.connect(self.save_category)
         self.ui.Back_button.clicked.connect(self.close)
 
     def save_category(self):
         category_name = self.ui.username_textarea.text()
 
-        # Validate
         if not category_name:
             QMessageBox.warning(self, "Error", "Category name is required")
             return
@@ -63,7 +60,7 @@ class AddCategoryWindow(QDialog):
             conn = get_connection()
             cursor = conn.cursor()
 
-            # Check if category already exists
+            # Check Existed Category
             cursor.execute("SELECT CategoryID FROM Categories WHERE CategoryName = %s", (category_name,))
             if cursor.fetchone():
                 QMessageBox.warning(self, "Error", "Category already exists")
@@ -91,10 +88,9 @@ class EditCategoryWindow(QDialog):
         # Load categories when form opens
         self.load_categories()
 
-        # When user selects a category, auto fill the name field
+        # Autofill Category Data
         self.ui.Selectuser_combobox.currentIndexChanged.connect(self.fill_category_data)
 
-        # Connect buttons
         self.ui.edituser_button.clicked.connect(self.save_edit)
         self.ui.Back_button.clicked.connect(self.close)
 

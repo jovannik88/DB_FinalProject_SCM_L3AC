@@ -101,6 +101,7 @@ class EditCustomerWindow(QDialog):
         self.ui.editcustomer_button.clicked.connect(self.save_edit)
         self.ui.Back_button.clicked.connect(self.close)
 
+    #Load Customer from combobox
     def load_customers(self):
         try:
             conn = get_connection()
@@ -122,6 +123,7 @@ class EditCustomerWindow(QDialog):
         except Exception as e:
             QMessageBox.critical(self, "Database Error", str(e))
 
+    #Fill selected customer Info from combobox
     def fill_customer_data(self):
         customer_id = self.ui.Selectcustomer_combobox.currentData()
         if not customer_id:

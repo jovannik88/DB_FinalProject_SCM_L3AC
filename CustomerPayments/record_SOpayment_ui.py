@@ -110,7 +110,7 @@ class Ui_RecordSoPayment(object):
         self.TotalAmount_label.setText("")
         self.savePayment_button_12.setText(QCoreApplication.translate("Dialog", u"Save Payment", None))
         self.label_2.setText(QCoreApplication.translate("Dialog", u"Customer", None))
-        self.customer_label.setText(QCoreApplication.translate("Dialog", u"d", None))
+        self.customer_label.setText(QCoreApplication.translate("Dialog", u"", None))
         self.label_3.setText(QCoreApplication.translate("Dialog", u"Total Amount :", None))
         self.total_amount_label.setText("")
         self.label_4.setText(QCoreApplication.translate("Dialog", u"Payment Date :", None))

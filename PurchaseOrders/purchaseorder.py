@@ -56,6 +56,8 @@ class PurchaseOrderWindow(QDialog):
         self.view_invoiceui_window.show()
 
 
+
+#Po Create
 class CreatePOWindow(QDialog):
     def __init__(self):
         super().__init__()

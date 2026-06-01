@@ -1,14 +1,4 @@
-# -*- coding: utf-8 -*-
-
-################################################################################
-## Form generated from reading UI file 'add_cust.ui'
-##
-## Created by: Qt User Interface Compiler version 6.11.1
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+from PySide6.QtCore import (QCoreApplication,
     QMetaObject, QObject, QPoint, QRect,
     QSize, QTime, QUrl, Qt)
 from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,

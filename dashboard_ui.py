@@ -1,13 +1,4 @@
 # -*- coding: utf-8 -*-
-
-################################################################################
-## Form generated from reading UI file 'Dashboard.ui'
-##
-## Created by: Qt User Interface Compiler version 6.11.1
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
     QSize, QTime, QUrl, Qt)
@@ -16,93 +7,129 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QDialog, QHeaderView, QLabel,
-    QPushButton, QSizePolicy, QTableView, QWidget)
+    QPushButton, QSizePolicy, QTableView, QWidget,
+    QScrollArea, QVBoxLayout)  # ← add QScrollArea, QVBoxLayout
 
 class Ui_Dashboard(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(770, 1156)
-        self.label = QLabel(Dialog)
+        Dialog.resize(770, 700)  # ← smaller window size
+
+        # ── Main layout with scroll ──
+        self.main_layout = QVBoxLayout(Dialog)
+        self.main_layout.setContentsMargins(0, 0, 0, 0)
+
+        # Scroll Area
+        self.scrollArea = QScrollArea(Dialog)
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollArea.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        self.scrollArea.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+
+        # Container widget inside scroll area
+        self.scrollContent = QWidget()
+        self.scrollContent.setMinimumSize(760, 1156)  # original size
+
+        # ── All original widgets go inside scrollContent ──
+        self.label = QLabel(self.scrollContent)
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(280, 10, 181, 41))
         font = QFont()
         font.setPointSize(26)
         self.label.setFont(font)
-        self.label_2 = QLabel(Dialog)
+
+        self.label_2 = QLabel(self.scrollContent)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setGeometry(QRect(0, 100, 211, 41))
         font1 = QFont()
         font1.setPointSize(20)
         self.label_2.setFont(font1)
-        self.label_TotalSalesToday = QLabel(Dialog)
+
+        self.label_TotalSalesToday = QLabel(self.scrollContent)
         self.label_TotalSalesToday.setObjectName(u"label_TotalSalesToday")
         self.label_TotalSalesToday.setGeometry(QRect(0, 150, 211, 41))
         font2 = QFont()
         font2.setPointSize(16)
         self.label_TotalSalesToday.setFont(font2)
-        self.label_3 = QLabel(Dialog)
+
+        self.label_3 = QLabel(self.scrollContent)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setGeometry(QRect(230, 100, 251, 41))
         self.label_3.setFont(font1)
-        self.totalPurchasetoday_label = QLabel(Dialog)
+
+        self.totalPurchasetoday_label = QLabel(self.scrollContent)
         self.totalPurchasetoday_label.setObjectName(u"totalPurchasetoday_label")
         self.totalPurchasetoday_label.setGeometry(QRect(230, 150, 251, 41))
         self.totalPurchasetoday_label.setFont(font2)
-        self.label_5 = QLabel(Dialog)
+
+        self.label_5 = QLabel(self.scrollContent)
         self.label_5.setObjectName(u"label_5")
         self.label_5.setGeometry(QRect(500, 100, 221, 41))
         self.label_5.setFont(font1)
-        self.todayprofitloss_label = QLabel(Dialog)
+
+        self.todayprofitloss_label = QLabel(self.scrollContent)
         self.todayprofitloss_label.setObjectName(u"todayprofitloss_label")
         self.todayprofitloss_label.setGeometry(QRect(500, 150, 221, 41))
         self.todayprofitloss_label.setFont(font2)
-        self.label_4 = QLabel(Dialog)
+
+        self.label_4 = QLabel(self.scrollContent)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setGeometry(QRect(270, 200, 201, 41))
         self.label_4.setFont(font)
-        self.RecentSales_Table = QTableView(Dialog)
+
+        self.RecentSales_Table = QTableView(self.scrollContent)
         self.RecentSales_Table.setObjectName(u"RecentSales_Table")
         self.RecentSales_Table.setGeometry(QRect(0, 250, 761, 101))
-        self.label_6 = QLabel(Dialog)
+
+        self.label_6 = QLabel(self.scrollContent)
         self.label_6.setObjectName(u"label_6")
         self.label_6.setGeometry(QRect(250, 360, 261, 41))
         self.label_6.setFont(font)
-        self.RecentPurchase_Table_2 = QTableView(Dialog)
+
+        self.RecentPurchase_Table_2 = QTableView(self.scrollContent)
         self.RecentPurchase_Table_2.setObjectName(u"RecentPurchase_Table_2")
         self.RecentPurchase_Table_2.setGeometry(QRect(0, 410, 761, 101))
-        self.label_7 = QLabel(Dialog)
+
+        self.label_7 = QLabel(self.scrollContent)
         self.label_7.setObjectName(u"label_7")
         self.label_7.setGeometry(QRect(240, 530, 291, 41))
         self.label_7.setFont(font)
-        self.unpaidcustomertableview = QTableView(Dialog)
+
+        self.unpaidcustomertableview = QTableView(self.scrollContent)
         self.unpaidcustomertableview.setObjectName(u"unpaidcustomertableview")
         self.unpaidcustomertableview.setGeometry(QRect(0, 590, 761, 101))
-        self.label_8 = QLabel(Dialog)
+
+        self.label_8 = QLabel(self.scrollContent)
         self.label_8.setObjectName(u"label_8")
         self.label_8.setGeometry(QRect(250, 710, 291, 41))
         self.label_8.setFont(font)
-        self.unpaidsuppliertableview_2 = QTableView(Dialog)
+
+        self.unpaidsuppliertableview_2 = QTableView(self.scrollContent)
         self.unpaidsuppliertableview_2.setObjectName(u"unpaidsuppliertableview_2")
         self.unpaidsuppliertableview_2.setGeometry(QRect(0, 760, 761, 101))
-        self.label_9 = QLabel(Dialog)
+
+        self.label_9 = QLabel(self.scrollContent)
         self.label_9.setObjectName(u"label_9")
         self.label_9.setGeometry(QRect(290, 870, 291, 41))
         self.label_9.setFont(font)
-        self.lowstocktableview_3 = QTableView(Dialog)
+
+        self.lowstocktableview_3 = QTableView(self.scrollContent)
         self.lowstocktableview_3.setObjectName(u"lowstocktableview_3")
         self.lowstocktableview_3.setGeometry(QRect(0, 920, 761, 101))
-        self.pushButton = QPushButton(Dialog)
+
+        self.pushButton = QPushButton(self.scrollContent)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setGeometry(QRect(580, 1050, 171, 61))
         font3 = QFont()
         font3.setPointSize(14)
         self.pushButton.setFont(font3)
 
-        self.retranslateUi(Dialog)
+        # ── Connect scroll area ──
+        self.scrollArea.setWidget(self.scrollContent)
+        self.main_layout.addWidget(self.scrollArea)
 
+        self.retranslateUi(Dialog)
         QMetaObject.connectSlotsByName(Dialog)
-    # setupUi
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
@@ -119,5 +146,3 @@ class Ui_Dashboard(object):
         self.label_8.setText(QCoreApplication.translate("Dialog", u"Unpaid Supplier", None))
         self.label_9.setText(QCoreApplication.translate("Dialog", u"Low Stock", None))
         self.pushButton.setText(QCoreApplication.translate("Dialog", u"Back", None))
-    # retranslateUi
-

@@ -3,9 +3,11 @@ from PySide6.QtGui import QStandardItemModel, QStandardItem
 from PySide6.QtCore import QDate, Qt
 from db_connector import get_connection
 
-
+#Customer Payment Main Menu UI
 from CustomerPayments.CustomerPayment_ui import Ui_CustomerPayment
+#Customer Payment add New Payment UI
 from CustomerPayments.record_SOpayment_ui import Ui_RecordSoPayment
+#Customer Payment View UI
 from CustomerPayments.view_customerpayment_ui import Ui_viewcustomerpayment
 
 class CustomerPaymentWindow(QDialog):
@@ -43,6 +45,7 @@ class RecordSOPaymentWindow(QDialog):
         self.ui.pushButton_11.clicked.connect(self.close)
         self.ui.savePayment_button_12.clicked.connect(self.save_payment)
 
+    #Load SO ID in the combobox 
     def load_sales_orders(self):
         try:
             conn = get_connection()
@@ -75,6 +78,7 @@ class RecordSOPaymentWindow(QDialog):
         except Exception as e:
             QMessageBox.critical(self, "Database Error", str(e))
 
+    #Autofill so data
     def fill_so_data(self):
         so_id = self.ui.selectSO_combobox.currentData()
         if not so_id:
