@@ -48,7 +48,7 @@ class Ui_Product(object):
         self.View_Product_Button.setText(QCoreApplication.translate("Dialog", u"View Product", None))
         self.pushButton_11.setText(QCoreApplication.translate("Dialog", u"Back ", None))
         self.add_Product_button.setText(QCoreApplication.translate("Dialog", u"Add Product", None))
-        self.Edit_Product_button.setText(QCoreApplication.translate("Dialog", u"Edit Category", None))
+        self.Edit_Product_button.setText(QCoreApplication.translate("Dialog", u"Edit Product", None))
         self.label_product.setText(QCoreApplication.translate("Dialog", u"Product", None))
     # retranslateUi
 
