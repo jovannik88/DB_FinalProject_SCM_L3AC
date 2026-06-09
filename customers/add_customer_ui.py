@@ -65,9 +65,9 @@ class add_users_ui(object):
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
-        self.save_button.setText(QCoreApplication.translate("Dialog", u"Save User", None))
+        self.save_button.setText(QCoreApplication.translate("Dialog", u"Save Customer", None))
         self.Back_button.setText(QCoreApplication.translate("Dialog", u"Back ", None))
-        self.label.setText(QCoreApplication.translate("Dialog", u"Add Users", None))
+        self.label.setText(QCoreApplication.translate("Dialog", u"Add ", None))
         self.Name_label.setText(QCoreApplication.translate("Dialog", u"Name :", None))
         self.Phone_label.setText(QCoreApplication.translate("Dialog", u"Phone :", None))
         self.Email_label.setText(QCoreApplication.translate("Dialog", u"E-Mail :", None))

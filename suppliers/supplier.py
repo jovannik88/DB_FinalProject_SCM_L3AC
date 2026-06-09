@@ -201,7 +201,7 @@ class ViewSupplierWindow(QDialog):
 
             model = QStandardItemModel()
             model.setHorizontalHeaderLabels([
-                'ID', 'Customer Name', 'Phone', 'Email', 'Address'
+                'ID', 'Supplier Name', 'Phone', 'Email', 'Address'
             ])
 
             for row_data in suppliers:
